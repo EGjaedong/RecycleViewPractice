@@ -5,7 +5,7 @@ import java.util.List;
 
 public class MultiTypeData extends SimpleTypeData {
     public static final int TYPE_ITEM = 0;
-    public static final int TYPE_DEADER = 1;
+    public static final int TYPE_HEADER = 1;
 
     public int type;
 
@@ -24,7 +24,7 @@ public class MultiTypeData extends SimpleTypeData {
 
     public static List<MultiTypeData> createMultiTypeDataList(int dataCount) {
         List<MultiTypeData> multiTypeDataList = new ArrayList<>();
-        multiTypeDataList.add(new MultiTypeData(TYPE_DEADER, "This is header", null, lastDataNumber++));
+        multiTypeDataList.add(new MultiTypeData(TYPE_HEADER, "This is header", null, lastDataNumber++));
         for (int i = 0; i < dataCount; i++) {
             multiTypeDataList.add(new MultiTypeData(TYPE_ITEM, "Title" + lastDataNumber, "Description" + lastDataNumber, lastDataNumber++));
         }
