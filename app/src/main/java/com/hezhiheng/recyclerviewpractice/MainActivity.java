@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.btn_recycler_view)
     public void btnRecyclerViewClick(Button button){
-        Intent intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
+        Intent intent = new Intent(MainActivity.this, ListActivity.class);
         startActivity(intent);
     }
 }
