@@ -11,7 +11,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
-    @BindView(R.id.btn_recycler_view)
+    @BindView(R.id.btn_to_list_activity)
     Button button;
 
     @Override
@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick(R.id.btn_recycler_view)
+    @OnClick(R.id.btn_to_list_activity)
     public void btnRecyclerViewClick(Button button){
         Intent intent = new Intent(MainActivity.this, ListActivity.class);
         startActivity(intent);

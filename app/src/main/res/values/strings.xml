@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">RecyclerViewPractice</string>
-    <string name="btn_recycler_view_text">RecyclerView</string>
+    <string name="btn_list_view_text">ListActivity</string>
 </resources>
