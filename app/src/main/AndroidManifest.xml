@@ -19,7 +19,7 @@
         </activity>
         <activity android:name=".SimpleTypeDataListActivity" />
         <activity android:name=".MultiTypeDataListActivity" />
-        <activity android:name=".MultiTypeDataListWithAvatarActivity" />
+        <activity android:name=".MultiTypeWithImageDataListActivity" />
     </application>
 
 </manifest>

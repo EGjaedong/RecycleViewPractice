@@ -19,7 +19,7 @@ import butterknife.BindDimen;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MultiTypeDataListWithAvatarActivity extends AppCompatActivity {
+public class MultiTypeWithImageDataListActivity extends AppCompatActivity {
     @BindView(R.id.recycler_view)
     RecyclerView recyclerView;
     @BindDimen(R.dimen.recycler_view_item_space)

@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_to_multi_type_with_avatar_activity:
                 startActivity(new Intent(MainActivity.this,
-                        MultiTypeDataListWithAvatarActivity.class));
+                        MultiTypeWithImageDataListActivity.class));
                 break;
         }
     }
