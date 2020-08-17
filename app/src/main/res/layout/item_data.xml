@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/item_data_border"
-    android:paddingStart="@dimen/item_data_padding"
-    android:paddingTop="@dimen/item_data_padding"
-    android:paddingEnd="@dimen/item_data_padding"
-    android:paddingBottom="@dimen/item_data_padding">
+    android:background="@drawable/item_border"
+    android:paddingStart="@dimen/item_padding"
+    android:paddingTop="@dimen/item_padding"
+    android:paddingEnd="@dimen/item_padding"
+    android:paddingBottom="@dimen/item_padding">
 
     <TextView
         android:id="@+id/data_title"
