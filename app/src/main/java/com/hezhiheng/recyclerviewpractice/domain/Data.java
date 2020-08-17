@@ -42,7 +42,8 @@ public class Data {
     public static ArrayList<Data> createDataList(int dataCount) {
         ArrayList<Data> dataList = new ArrayList<>();
         for (int i = 0; i < dataCount; i++) {
-            dataList.add(new Data("title" + (++lastDataNumber), "desp" + lastDataNumber, lastDataNumber));
+            dataList.add(new Data("Title" + (++lastDataNumber), "Description"
+                    + lastDataNumber, lastDataNumber));
         }
         return dataList;
     }

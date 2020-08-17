@@ -10,41 +10,29 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.hezhiheng.recyclerviewpractice.R;
+import com.hezhiheng.recyclerviewpractice.adapter.viewHolder.TextTypeViewHolder;
 import com.hezhiheng.recyclerviewpractice.domain.Data;
 
 import java.util.List;
 
-public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
+public class DataAdapter extends RecyclerView.Adapter<TextTypeViewHolder> {
     private List<Data> dataList;
 
     public DataAdapter(List<Data> dataList) {
         this.dataList = dataList;
     }
 
-    static class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView titleTextView;
-        public TextView numberTextView;
-        public TextView descTextView;
-
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            titleTextView = itemView.findViewById(R.id.data_title);
-            numberTextView = itemView.findViewById(R.id.data_number);
-            descTextView = itemView.findViewById(R.id.data_desc);
-        }
-    }
-
     @NonNull
     @Override
-    public DataAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public TextTypeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
         View dataView = inflater.inflate(R.layout.item_data, parent, false);
-        return new ViewHolder(dataView);
+        return new TextTypeViewHolder(dataView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull TextTypeViewHolder holder, int position) {
         Data data = dataList.get(position);
 
         TextView titleTextView = holder.titleTextView;
