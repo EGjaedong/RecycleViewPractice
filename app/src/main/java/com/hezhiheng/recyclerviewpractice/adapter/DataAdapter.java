@@ -21,7 +21,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
         this.dataList = dataList;
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    static class ViewHolder extends RecyclerView.ViewHolder {
         public TextView titleTextView;
         public TextView numberTextView;
         public TextView descTextView;

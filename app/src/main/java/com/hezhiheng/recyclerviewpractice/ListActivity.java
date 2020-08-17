@@ -27,7 +27,7 @@ public class ListActivity extends AppCompatActivity {
 
     ArrayList<Data> dataList;
 
-    class SpacesItemDecoration extends RecyclerView.ItemDecoration {
+    static class SpacesItemDecoration extends RecyclerView.ItemDecoration {
         private int space;
 
         public SpacesItemDecoration(int space) {
