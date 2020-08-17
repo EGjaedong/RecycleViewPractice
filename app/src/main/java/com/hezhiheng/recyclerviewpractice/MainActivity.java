@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick(R.id.btn_to_simple_type_activity)
+    @OnClick({R.id.btn_to_simple_type_activity, R.id.btn_to_multi_type_activity})
     public void btnRecyclerViewClick(Button button) {
         switch (button.getId()) {
             case R.id.btn_to_simple_type_activity:

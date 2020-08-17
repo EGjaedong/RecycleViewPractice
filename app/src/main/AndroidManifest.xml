@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".SimpleTypeDataListActivity" />
+        <activity android:name=".MultiTypeDataListActivity" />
     </application>
 
 </manifest>

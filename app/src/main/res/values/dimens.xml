@@ -8,4 +8,5 @@
     <dimen name="item_padding">10dp</dimen>
     <dimen name="recycler_view_margin_horizontal">24dp</dimen>
     <dimen name="recycler_view_item_space">12dp</dimen>
+    <dimen name="item_header_height">48dp</dimen>
 </resources>
