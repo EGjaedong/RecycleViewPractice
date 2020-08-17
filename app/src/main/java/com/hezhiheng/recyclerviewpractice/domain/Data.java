@@ -11,12 +11,14 @@ public class Data {
     public String title;
     public String description;
     public int number;
+    public String avatar;
 
-    public Data(int type, String title, String description, int number) {
+    public Data(int type, String title, String description, int number, int avatarSuffix) {
         this.title = title;
         this.description = description;
         this.number = number;
         this.type = type;
+        this.avatar = "https://loremflickr.com/180/180?lock=" + avatarSuffix;
     }
 
     public String getTitle() {
@@ -51,13 +53,21 @@ public class Data {
         this.type = type;
     }
 
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
     public static int lastDataNumber = 0;
 
     public static List<Data> createMultiTypeDataList(int dataCount) {
         List<Data> dataList = new ArrayList<>();
-        dataList.add(new Data(TYPE_HEADER, "This is header", null, lastDataNumber++));
+        dataList.add(new Data(TYPE_HEADER, "This is header", null, lastDataNumber, lastDataNumber++));
         for (int i = 0; i < dataCount; i++) {
-            dataList.add(new Data(TYPE_ITEM, "Title" + lastDataNumber, "Description" + lastDataNumber, lastDataNumber++));
+            dataList.add(new Data(TYPE_ITEM, "Title" + lastDataNumber, "Description" + lastDataNumber, lastDataNumber, lastDataNumber++));
         }
         lastDataNumber = 0;
         return dataList;
