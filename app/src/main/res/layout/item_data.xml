@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/data_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|top"
+        android:layout_marginStart="@dimen/title_margin_top_and_start"
+        android:layout_marginTop="@dimen/title_margin_top_and_start" />
+
+    <TextView
+        android:id="@+id/data_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|top"
+        android:layout_marginTop="@dimen/number_margin_top_and_start"
+        android:layout_marginEnd="@dimen/number_margin_top_and_start" />
+
+    <TextView
+        android:id="@+id/data_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|bottom"
+        android:layout_marginStart="@dimen/desc_margin_bottom_adn_start"
+        android:layout_marginBottom="@dimen/desc_margin_bottom_adn_start"/>
+</FrameLayout>
