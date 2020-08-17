@@ -11,8 +11,8 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
-    @BindView(R.id.btn_to_list_activity)
-    Button button;
+    @BindView(R.id.btn_to_simple_type_activity)
+    Button btnToSimpleTypeDataListActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,9 +21,9 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick(R.id.btn_to_list_activity)
+    @OnClick(R.id.btn_to_simple_type_activity)
     public void btnRecyclerViewClick(Button button){
-        Intent intent = new Intent(MainActivity.this, ListActivity.class);
+        Intent intent = new Intent(MainActivity.this, SimpleTypeDataListActivity.class);
         startActivity(intent);
     }
 }

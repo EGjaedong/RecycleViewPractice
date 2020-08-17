@@ -15,10 +15,10 @@ import com.hezhiheng.recyclerviewpractice.domain.SimpleTypeData;
 
 import java.util.List;
 
-public class DataAdapter extends RecyclerView.Adapter<ItemTypeViewHolder> {
+public class SimpleTypeDataAdapter extends RecyclerView.Adapter<ItemTypeViewHolder> {
     private List<SimpleTypeData> simpleTypeDataList;
 
-    public DataAdapter(List<SimpleTypeData> simpleTypeDataList) {
+    public SimpleTypeDataAdapter(List<SimpleTypeData> simpleTypeDataList) {
         this.simpleTypeDataList = simpleTypeDataList;
     }
 
