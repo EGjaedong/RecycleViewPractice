@@ -11,15 +11,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.hezhiheng.recyclerviewpractice.R;
 import com.hezhiheng.recyclerviewpractice.adapter.viewHolder.TextTypeViewHolder;
-import com.hezhiheng.recyclerviewpractice.domain.Data;
+import com.hezhiheng.recyclerviewpractice.domain.SimpleTypeData;
 
 import java.util.List;
 
 public class DataAdapter extends RecyclerView.Adapter<TextTypeViewHolder> {
-    private List<Data> dataList;
+    private List<SimpleTypeData> simpleTypeDataList;
 
-    public DataAdapter(List<Data> dataList) {
-        this.dataList = dataList;
+    public DataAdapter(List<SimpleTypeData> simpleTypeDataList) {
+        this.simpleTypeDataList = simpleTypeDataList;
     }
 
     @NonNull
@@ -33,18 +33,18 @@ public class DataAdapter extends RecyclerView.Adapter<TextTypeViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull TextTypeViewHolder holder, int position) {
-        Data data = dataList.get(position);
+        SimpleTypeData simpleTypeData = simpleTypeDataList.get(position);
 
         TextView titleTextView = holder.titleTextView;
-        titleTextView.setText(data.getTitle());
+        titleTextView.setText(simpleTypeData.getTitle());
         TextView numberTextView = holder.numberTextView;
-        numberTextView.setText(String.valueOf(data.getNumber()));
+        numberTextView.setText(String.valueOf(simpleTypeData.getNumber()));
         TextView descTextView = holder.descTextView;
-        descTextView.setText(data.getDescription());
+        descTextView.setText(simpleTypeData.getDescription());
     }
 
     @Override
     public int getItemCount() {
-        return dataList.size();
+        return simpleTypeDataList.size();
     }
 }

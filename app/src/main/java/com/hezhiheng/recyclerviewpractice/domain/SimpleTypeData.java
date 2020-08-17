@@ -1,13 +1,14 @@
 package com.hezhiheng.recyclerviewpractice.domain;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class Data {
+public class SimpleTypeData {
     public String title;
     public String description;
     public int number;
 
-    public Data(String title, String description, int number) {
+    public SimpleTypeData(String title, String description, int number) {
         this.title = title;
         this.description = description;
         this.number = number;
@@ -39,12 +40,12 @@ public class Data {
 
     public static int lastDataNumber = 0;
 
-    public static ArrayList<Data> createDataList(int dataCount) {
-        ArrayList<Data> dataList = new ArrayList<>();
+    public static List<SimpleTypeData> createSimpleTypeDataList(int dataCount) {
+        List<SimpleTypeData> simpleTypeDataList = new ArrayList<>();
         for (int i = 0; i < dataCount; i++) {
-            dataList.add(new Data("Title" + (++lastDataNumber), "Description"
+            simpleTypeDataList.add(new SimpleTypeData("Title" + (++lastDataNumber), "Description"
                     + lastDataNumber, lastDataNumber));
         }
-        return dataList;
+        return simpleTypeDataList;
     }
 }

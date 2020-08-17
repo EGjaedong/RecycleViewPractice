@@ -11,9 +11,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.hezhiheng.recyclerviewpractice.adapter.DataAdapter;
-import com.hezhiheng.recyclerviewpractice.domain.Data;
+import com.hezhiheng.recyclerviewpractice.domain.SimpleTypeData;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindDimen;
 import butterknife.BindView;
@@ -25,7 +25,7 @@ public class ListActivity extends AppCompatActivity {
     @BindDimen(R.dimen.recycler_view_item_space)
     int itemSpace;
 
-    ArrayList<Data> dataList;
+    List<SimpleTypeData> simpleTypeDataList;
 
     static class SpacesItemDecoration extends RecyclerView.ItemDecoration {
         private int space;
@@ -49,8 +49,8 @@ public class ListActivity extends AppCompatActivity {
         setContentView(R.layout.recycler_view_activity);
         ButterKnife.bind(this);
 
-        dataList = Data.createDataList(15);
-        DataAdapter dataAdapter = new DataAdapter(dataList);
+        simpleTypeDataList = SimpleTypeData.createSimpleTypeDataList(15);
+        DataAdapter dataAdapter = new DataAdapter(simpleTypeDataList);
         recyclerView.setAdapter(dataAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.addItemDecoration(new SpacesItemDecoration(itemSpace));
