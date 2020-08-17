@@ -10,12 +10,12 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.hezhiheng.recyclerviewpractice.R;
-import com.hezhiheng.recyclerviewpractice.adapter.viewHolder.TextTypeViewHolder;
+import com.hezhiheng.recyclerviewpractice.adapter.viewHolder.ItemTypeViewHolder;
 import com.hezhiheng.recyclerviewpractice.domain.SimpleTypeData;
 
 import java.util.List;
 
-public class DataAdapter extends RecyclerView.Adapter<TextTypeViewHolder> {
+public class DataAdapter extends RecyclerView.Adapter<ItemTypeViewHolder> {
     private List<SimpleTypeData> simpleTypeDataList;
 
     public DataAdapter(List<SimpleTypeData> simpleTypeDataList) {
@@ -24,15 +24,15 @@ public class DataAdapter extends RecyclerView.Adapter<TextTypeViewHolder> {
 
     @NonNull
     @Override
-    public TextTypeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ItemTypeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
         View dataView = inflater.inflate(R.layout.item_data, parent, false);
-        return new TextTypeViewHolder(dataView);
+        return new ItemTypeViewHolder(dataView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull TextTypeViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ItemTypeViewHolder holder, int position) {
         SimpleTypeData simpleTypeData = simpleTypeDataList.get(position);
 
         TextView titleTextView = holder.titleTextView;
