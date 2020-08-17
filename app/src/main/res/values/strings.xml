@@ -3,4 +3,5 @@
     <string name="btn_simple_type_list_view_text">SimpleTypeList</string>
     <string name="btn_multi_type_list_view_text">MultiTypeList</string>
     <string name="image_desc">avatar</string>
+    <string name="btn_multi_type_list_view_with_avatar_text">MultiTypeListWithPicture</string>
 </resources>

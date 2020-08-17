@@ -4,24 +4,42 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.hezhiheng.recyclerviewpractice.R;
-import com.hezhiheng.recyclerviewpractice.adapter.viewHolder.ItemViewHolder;
 import com.hezhiheng.recyclerviewpractice.domain.Data;
 
 import java.util.List;
 
-public class MultiTypeDataAdapter extends RecyclerView.Adapter<ItemViewHolder> {
+public class MultiTypeDataAdapter extends RecyclerView.Adapter<MultiTypeDataAdapter.ItemViewHolder> {
     public List<Data> dataList;
-    public Context context;
+    public Context mContext;
 
-    public MultiTypeDataAdapter(Context context, List<Data> dataList) {
-        this.context = context;
+    public MultiTypeDataAdapter(Context mContext, List<Data> dataList) {
+        this.mContext = mContext;
         this.dataList = dataList;
+    }
+
+    public static class ItemViewHolder extends RecyclerView.ViewHolder {
+        public TextView headerTextView;
+        public TextView titleTextView;
+        public TextView numberTextView;
+        public TextView descTextView;
+        public ImageView avatarImageView;
+
+        public ItemViewHolder(@NonNull View itemView) {
+            super(itemView);
+            titleTextView = itemView.findViewById(R.id.data_title);
+            numberTextView = itemView.findViewById(R.id.data_number);
+            descTextView = itemView.findViewById(R.id.data_desc);
+            headerTextView = itemView.findViewById(R.id.data_header);
+            avatarImageView = itemView.findViewById(R.id.data_avatar);
+        }
     }
 
     @NonNull
@@ -63,8 +81,8 @@ public class MultiTypeDataAdapter extends RecyclerView.Adapter<ItemViewHolder> {
                     holder.titleTextView.setText(data.getTitle());
                     holder.descTextView.setText(data.getDescription());
                     holder.numberTextView.setText(String.valueOf(data.getNumber()));
-                    Glide.with(context)
-                            .load(dataList.get(position).getAvatar())
+                    Glide.with(mContext)
+                            .load(data.getAvatar())
                             .into(holder.avatarImageView);
                     break;
             }
