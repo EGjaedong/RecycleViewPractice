@@ -9,15 +9,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.hezhiheng.recyclerviewpractice.R;
 import com.hezhiheng.recyclerviewpractice.adapter.viewHolder.ItemTypeViewHolder;
-import com.hezhiheng.recyclerviewpractice.domain.MultiTypeData;
+import com.hezhiheng.recyclerviewpractice.domain.Data;
 
 import java.util.List;
 
 public class MultiTypeDataAdapter extends RecyclerView.Adapter<ItemTypeViewHolder> {
-    public List<MultiTypeData> multiTypeDataList;
+    public List<Data> dataList;
 
-    public MultiTypeDataAdapter(List<MultiTypeData> multiTypeDataList) {
-        this.multiTypeDataList = multiTypeDataList;
+    public MultiTypeDataAdapter(List<Data> dataList) {
+        this.dataList = dataList;
     }
 
     @NonNull
@@ -25,10 +25,10 @@ public class MultiTypeDataAdapter extends RecyclerView.Adapter<ItemTypeViewHolde
     public ItemTypeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = null;
         switch (viewType) {
-            case MultiTypeData.TYPE_HEADER:
+            case Data.TYPE_HEADER:
                 view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_header, parent, false);
                 return new ItemTypeViewHolder(view);
-            case MultiTypeData.TYPE_ITEM:
+            case Data.TYPE_ITEM:
                 view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_data, parent, false);
                 return new ItemTypeViewHolder(view);
         }
@@ -37,11 +37,11 @@ public class MultiTypeDataAdapter extends RecyclerView.Adapter<ItemTypeViewHolde
 
     @Override
     public int getItemViewType(int position) {
-        switch (multiTypeDataList.get(position).type) {
+        switch (dataList.get(position).type) {
             case 0:
-                return MultiTypeData.TYPE_ITEM;
+                return Data.TYPE_ITEM;
             case 1:
-                return MultiTypeData.TYPE_HEADER;
+                return Data.TYPE_HEADER;
             default:
                 return -1;
         }
@@ -49,16 +49,16 @@ public class MultiTypeDataAdapter extends RecyclerView.Adapter<ItemTypeViewHolde
 
     @Override
     public void onBindViewHolder(@NonNull ItemTypeViewHolder holder, int position) {
-        MultiTypeData multiTypeData = multiTypeDataList.get(position);
-        if (multiTypeData != null) {
-            switch (multiTypeData.getType()) {
-                case MultiTypeData.TYPE_HEADER:
-                    holder.headerTextView.setText(multiTypeData.getTitle());
+        Data data = dataList.get(position);
+        if (data != null) {
+            switch (data.getType()) {
+                case Data.TYPE_HEADER:
+                    holder.headerTextView.setText(data.getTitle());
                     break;
-                case MultiTypeData.TYPE_ITEM:
-                    holder.titleTextView.setText(multiTypeData.getTitle());
-                    holder.descTextView.setText(multiTypeData.getDescription());
-                    holder.numberTextView.setText(String.valueOf(multiTypeData.getNumber()));
+                case Data.TYPE_ITEM:
+                    holder.titleTextView.setText(data.getTitle());
+                    holder.descTextView.setText(data.getDescription());
+                    holder.numberTextView.setText(String.valueOf(data.getNumber()));
                     break;
             }
         }
@@ -66,6 +66,6 @@ public class MultiTypeDataAdapter extends RecyclerView.Adapter<ItemTypeViewHolde
 
     @Override
     public int getItemCount() {
-        return multiTypeDataList.size();
+        return dataList.size();
     }
 }

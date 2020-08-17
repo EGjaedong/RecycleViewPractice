@@ -3,7 +3,7 @@ package com.hezhiheng.recyclerviewpractice.domain;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MultiTypeData {
+public class Data {
     public static final int TYPE_ITEM = 0;
     public static final int TYPE_HEADER = 1;
 
@@ -12,7 +12,7 @@ public class MultiTypeData {
     public String description;
     public int number;
 
-    public MultiTypeData(int type, String title, String description, int number) {
+    public Data(int type, String title, String description, int number) {
         this.title = title;
         this.description = description;
         this.number = number;
@@ -53,13 +53,13 @@ public class MultiTypeData {
 
     public static int lastDataNumber = 0;
 
-    public static List<MultiTypeData> createMultiTypeDataList(int dataCount) {
-        List<MultiTypeData> multiTypeDataList = new ArrayList<>();
-        multiTypeDataList.add(new MultiTypeData(TYPE_HEADER, "This is header", null, lastDataNumber++));
+    public static List<Data> createMultiTypeDataList(int dataCount) {
+        List<Data> dataList = new ArrayList<>();
+        dataList.add(new Data(TYPE_HEADER, "This is header", null, lastDataNumber++));
         for (int i = 0; i < dataCount; i++) {
-            multiTypeDataList.add(new MultiTypeData(TYPE_ITEM, "Title" + lastDataNumber, "Description" + lastDataNumber, lastDataNumber++));
+            dataList.add(new Data(TYPE_ITEM, "Title" + lastDataNumber, "Description" + lastDataNumber, lastDataNumber++));
         }
         lastDataNumber = 0;
-        return multiTypeDataList;
+        return dataList;
     }
 }
