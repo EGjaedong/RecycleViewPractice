@@ -10,8 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.hezhiheng.recyclerviewpractice.adapter.SimpleTypeDataAdapter;
-import com.hezhiheng.recyclerviewpractice.domain.SimpleTypeData;
+import com.hezhiheng.recyclerviewpractice.adapter.MultiTypeDataAdapter;
+import com.hezhiheng.recyclerviewpractice.domain.MultiTypeData;
 
 import java.util.List;
 
@@ -25,7 +25,7 @@ public class SimpleTypeDataListActivity extends AppCompatActivity {
     @BindDimen(R.dimen.recycler_view_item_space)
     int itemSpace;
 
-    List<SimpleTypeData> simpleTypeDataList;
+    List<MultiTypeData> multiTypeDataList;
 
     static class SpacesItemDecoration extends RecyclerView.ItemDecoration {
         private int space;
@@ -49,9 +49,9 @@ public class SimpleTypeDataListActivity extends AppCompatActivity {
         setContentView(R.layout.recycler_view_activity);
         ButterKnife.bind(this);
 
-        simpleTypeDataList = SimpleTypeData.createSimpleTypeDataList(15);
-        SimpleTypeDataAdapter simpleTypeDataAdapter = new SimpleTypeDataAdapter(simpleTypeDataList);
-        recyclerView.setAdapter(simpleTypeDataAdapter);
+        multiTypeDataList = MultiTypeData.createMultiTypeDataList(15);
+        MultiTypeDataAdapter multiTypeDataAdapter = new MultiTypeDataAdapter(multiTypeDataList);
+        recyclerView.setAdapter(multiTypeDataAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.addItemDecoration(new SpacesItemDecoration(itemSpace));
     }
