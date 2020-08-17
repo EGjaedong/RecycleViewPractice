@@ -49,7 +49,7 @@ public class MultiTypeDataListWithAvatarActivity extends AppCompatActivity {
         setContentView(R.layout.recycler_view_activity);
         ButterKnife.bind(this);
 
-        dataList = Data.createMultiTypeDataList(15);
+        dataList = Data.createMultiTypeDataList(100);
         MultiTypeDataAdapter multiTypeDataAdapter = new MultiTypeDataAdapter(this, dataList);
         recyclerView.setAdapter(multiTypeDataAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
