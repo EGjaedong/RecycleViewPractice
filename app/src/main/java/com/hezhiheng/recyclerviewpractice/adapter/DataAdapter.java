@@ -14,16 +14,7 @@ import com.hezhiheng.recyclerviewpractice.domain.Data;
 
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
-    @BindView(R.id.data_title)
-    TextView titleTextView;
-    @BindView(R.id.data_number)
-    TextView numberTextView;
-    @BindView(R.id.data_desc)
-    TextView descTextView;
 
     private List<Data> dataList;
 
@@ -38,10 +29,9 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            ButterKnife.bind(this, itemView);
-            titleTextView = DataAdapter.this.titleTextView;
-            numberTextView = DataAdapter.this.numberTextView;
-            descTextView = DataAdapter.this.descTextView;
+            titleTextView = itemView.findViewById(R.id.data_title);
+            numberTextView = itemView.findViewById(R.id.data_number);
+            descTextView = itemView.findViewById(R.id.data_desc);
         }
     }
 
@@ -58,9 +48,12 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Data data = dataList.get(position);
 
-        holder.titleTextView.setText(data.getTitle());
-        holder.numberTextView.setText(data.getNumber());
-        holder.descTextView.setText(data.getDescription());
+        TextView titleTextView = holder.titleTextView;
+        titleTextView.setText(data.getTitle());
+        TextView numberTextView = holder.numberTextView;
+        numberTextView.setText(String.valueOf(data.getNumber()));
+        TextView descTextView = holder.descTextView;
+        descTextView.setText(data.getDescription());
     }
 
     @Override
