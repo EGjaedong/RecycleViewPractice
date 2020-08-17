@@ -8,12 +8,12 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.hezhiheng.recyclerviewpractice.R;
-import com.hezhiheng.recyclerviewpractice.adapter.viewHolder.ItemTypeViewHolder;
+import com.hezhiheng.recyclerviewpractice.adapter.viewHolder.ItemViewHolder;
 import com.hezhiheng.recyclerviewpractice.domain.Data;
 
 import java.util.List;
 
-public class MultiTypeDataAdapter extends RecyclerView.Adapter<ItemTypeViewHolder> {
+public class MultiTypeDataAdapter extends RecyclerView.Adapter<ItemViewHolder> {
     public List<Data> dataList;
 
     public MultiTypeDataAdapter(List<Data> dataList) {
@@ -22,15 +22,15 @@ public class MultiTypeDataAdapter extends RecyclerView.Adapter<ItemTypeViewHolde
 
     @NonNull
     @Override
-    public ItemTypeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = null;
         switch (viewType) {
             case Data.TYPE_HEADER:
                 view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_header, parent, false);
-                return new ItemTypeViewHolder(view);
+                return new ItemViewHolder(view);
             case Data.TYPE_ITEM:
                 view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_data, parent, false);
-                return new ItemTypeViewHolder(view);
+                return new ItemViewHolder(view);
         }
         return null;
     }
@@ -48,7 +48,7 @@ public class MultiTypeDataAdapter extends RecyclerView.Adapter<ItemTypeViewHolde
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ItemTypeViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
         Data data = dataList.get(position);
         if (data != null) {
             switch (data.getType()) {

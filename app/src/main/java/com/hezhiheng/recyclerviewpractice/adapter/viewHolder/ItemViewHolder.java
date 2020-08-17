@@ -9,14 +9,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.hezhiheng.recyclerviewpractice.R;
 
-public class ItemTypeViewHolder extends RecyclerView.ViewHolder {
+public class ItemViewHolder extends RecyclerView.ViewHolder {
     public TextView headerTextView;
     public TextView titleTextView;
     public TextView numberTextView;
     public TextView descTextView;
     public ImageView avatarImageView;
 
-    public ItemTypeViewHolder(@NonNull View itemView) {
+    public ItemViewHolder(@NonNull View itemView) {
         super(itemView);
         titleTextView = itemView.findViewById(R.id.data_title);
         numberTextView = itemView.findViewById(R.id.data_number);
