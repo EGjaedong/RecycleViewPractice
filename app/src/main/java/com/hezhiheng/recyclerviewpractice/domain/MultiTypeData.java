@@ -12,7 +12,7 @@ public class MultiTypeData {
     public String description;
     public int number;
 
-    public MultiTypeData(int type, String title, String desc, int number) {
+    public MultiTypeData(int type, String title, String description, int number) {
         this.title = title;
         this.description = description;
         this.number = number;
@@ -59,6 +59,7 @@ public class MultiTypeData {
         for (int i = 0; i < dataCount; i++) {
             multiTypeDataList.add(new MultiTypeData(TYPE_ITEM, "Title" + lastDataNumber, "Description" + lastDataNumber, lastDataNumber++));
         }
+        lastDataNumber = 0;
         return multiTypeDataList;
     }
 }
