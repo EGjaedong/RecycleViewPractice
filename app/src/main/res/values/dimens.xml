@@ -2,5 +2,9 @@
 <resources>
     <dimen name="recycler_view_width">0dp</dimen>
     <dimen name="recycler_view_height">0dp</dimen>
-    <dimen name="data_margin">5dp</dimen>=
+    <dimen name="data_margin">5dp</dimen>
+    <dimen name="item_data_border_radius">8dp</dimen>
+    <dimen name="item_data_border_width">1dp</dimen>
+    <dimen name="item_data_padding">10dp</dimen>
+    <dimen name="recycler_view_margin_horizontal">24dp</dimen>=
 </resources>
