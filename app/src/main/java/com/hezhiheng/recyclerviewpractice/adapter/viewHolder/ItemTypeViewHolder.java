@@ -1,6 +1,7 @@
 package com.hezhiheng.recyclerviewpractice.adapter.viewHolder;
 
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,6 +14,7 @@ public class ItemTypeViewHolder extends RecyclerView.ViewHolder {
     public TextView titleTextView;
     public TextView numberTextView;
     public TextView descTextView;
+    public ImageView avatarImageView;
 
     public ItemTypeViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -20,5 +22,6 @@ public class ItemTypeViewHolder extends RecyclerView.ViewHolder {
         numberTextView = itemView.findViewById(R.id.data_number);
         descTextView = itemView.findViewById(R.id.data_desc);
         headerTextView = itemView.findViewById(R.id.data_header);
+        avatarImageView = itemView.findViewById(R.id.data_avatar);
     }
 }
