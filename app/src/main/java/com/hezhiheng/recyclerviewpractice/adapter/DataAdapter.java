@@ -15,14 +15,13 @@ import com.hezhiheng.recyclerviewpractice.domain.Data;
 import java.util.List;
 
 public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
-
     private List<Data> dataList;
 
     public DataAdapter(List<Data> dataList) {
         this.dataList = dataList;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         public TextView titleTextView;
         public TextView numberTextView;
         public TextView descTextView;
