@@ -1,5 +1,6 @@
 package com.hezhiheng.recyclerviewpractice.adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.hezhiheng.recyclerviewpractice.R;
 import com.hezhiheng.recyclerviewpractice.adapter.viewHolder.ItemViewHolder;
 import com.hezhiheng.recyclerviewpractice.domain.Data;
@@ -15,8 +17,10 @@ import java.util.List;
 
 public class MultiTypeDataAdapter extends RecyclerView.Adapter<ItemViewHolder> {
     public List<Data> dataList;
+    public Context context;
 
-    public MultiTypeDataAdapter(List<Data> dataList) {
+    public MultiTypeDataAdapter(Context context, List<Data> dataList) {
+        this.context = context;
         this.dataList = dataList;
     }
 
@@ -29,7 +33,7 @@ public class MultiTypeDataAdapter extends RecyclerView.Adapter<ItemViewHolder> {
                 view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_header, parent, false);
                 return new ItemViewHolder(view);
             case Data.TYPE_ITEM:
-                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_data, parent, false);
+                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_data_with_avatar, parent, false);
                 return new ItemViewHolder(view);
         }
         return null;
@@ -59,6 +63,9 @@ public class MultiTypeDataAdapter extends RecyclerView.Adapter<ItemViewHolder> {
                     holder.titleTextView.setText(data.getTitle());
                     holder.descTextView.setText(data.getDescription());
                     holder.numberTextView.setText(String.valueOf(data.getNumber()));
+                    Glide.with(context)
+                            .load(dataList.get(position).getAvatar())
+                            .into(holder.avatarImageView);
                     break;
             }
         }

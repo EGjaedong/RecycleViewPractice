@@ -50,7 +50,7 @@ public class SimpleTypeDataListActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         dataList = Data.createMultiTypeDataList(15);
-        MultiTypeDataAdapter multiTypeDataAdapter = new MultiTypeDataAdapter(dataList);
+        MultiTypeDataAdapter multiTypeDataAdapter = new MultiTypeDataAdapter(this, dataList);
         recyclerView.setAdapter(multiTypeDataAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.addItemDecoration(new SpacesItemDecoration(itemSpace));
