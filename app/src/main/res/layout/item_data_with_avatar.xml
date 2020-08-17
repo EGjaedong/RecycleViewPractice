@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/item_border"
+    android:paddingStart="@dimen/item_padding"
+    android:paddingTop="@dimen/item_padding"
+    android:paddingEnd="@dimen/item_padding"
+    android:paddingBottom="@dimen/item_padding">
+
+    <ImageView
+        android:id="@+id/image_avatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/image_margin_start"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:contentDescription="@string/image_desc" />
+
+    <TextView
+        android:id="@+id/data_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/data_margin"
+        android:layout_marginTop="@dimen/data_margin"
+        app:layout_constraintStart_toStartOf="@id/image_avatar"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/data_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/data_margin"
+        android:layout_marginEnd="@dimen/data_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/data_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/data_margin"
+        android:layout_marginBottom="@dimen/data_margin"
+        app:layout_constraintStart_toStartOf="@id/image_avatar"
+        app:layout_constraintTop_toBottomOf="@id/data_title" />
+</androidx.constraintlayout.widget.ConstraintLayout>
