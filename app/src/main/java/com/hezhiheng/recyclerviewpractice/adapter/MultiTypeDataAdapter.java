@@ -29,10 +29,12 @@ public class MultiTypeDataAdapter extends RecyclerView.Adapter<ItemViewHolder> {
         View view = null;
         switch (viewType) {
             case Data.TYPE_HEADER:
-                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_header, parent, false);
+                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_header,
+                        parent, false);
                 return new ItemViewHolder(view);
             case Data.TYPE_ITEM:
-                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_data_with_avatar, parent, false);
+                view = LayoutInflater.from(parent.getContext()).
+                        inflate(R.layout.item_data_with_avatar, parent, false);
                 return new ItemViewHolder(view);
         }
         return null;
