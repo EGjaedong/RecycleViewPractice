@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.hezhiheng.recyclerviewpractice.adapter.MultiTypeDataAdapter;
+import com.hezhiheng.recyclerviewpractice.adapter.SimpleTypeDataAdapter;
 import com.hezhiheng.recyclerviewpractice.domain.Data;
 
 import java.util.List;
@@ -50,8 +51,8 @@ public class SimpleTypeDataListActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         dataList = Data.createMultiTypeDataList(15);
-        MultiTypeDataAdapter multiTypeDataAdapter = new MultiTypeDataAdapter(this, dataList);
-        recyclerView.setAdapter(multiTypeDataAdapter);
+        SimpleTypeDataAdapter simpleTypeDataAdapter = new SimpleTypeDataAdapter(this, dataList);
+        recyclerView.setAdapter(simpleTypeDataAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.addItemDecoration(new SpacesItemDecoration(itemSpace));
     }
