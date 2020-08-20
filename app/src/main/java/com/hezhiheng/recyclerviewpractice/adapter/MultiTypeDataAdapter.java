@@ -42,14 +42,7 @@ public class MultiTypeDataAdapter extends RecyclerView.Adapter<ItemViewHolder> {
 
     @Override
     public int getItemViewType(int position) {
-        switch (dataList.get(position).type) {
-            case 0:
-                return Data.TYPE_ITEM;
-            case 1:
-                return Data.TYPE_HEADER;
-            default:
-                return -1;
-        }
+        return dataList.get(0).type;
     }
 
     @Override
@@ -61,6 +54,7 @@ public class MultiTypeDataAdapter extends RecyclerView.Adapter<ItemViewHolder> {
                     holder.headerTextView.setText(data.getTitle());
                     break;
                 case Data.TYPE_ITEM:
+//                    抽到holder里
                     holder.titleTextView.setText(data.getTitle());
                     holder.descTextView.setText(data.getDescription());
                     holder.numberTextView.setText(String.valueOf(data.getNumber()));
