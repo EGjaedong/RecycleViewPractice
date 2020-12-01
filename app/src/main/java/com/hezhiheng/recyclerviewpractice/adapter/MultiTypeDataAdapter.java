@@ -42,7 +42,7 @@ public class MultiTypeDataAdapter extends RecyclerView.Adapter<ItemViewHolder> {
 
     @Override
     public int getItemViewType(int position) {
-        return dataList.get(0).type;
+        return dataList.get(position).type;
     }
 
     @Override
